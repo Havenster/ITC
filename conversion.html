@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <style>
+        body 
+        {
+            background-color: #4C1D3D;
+            color: #FFBB94;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
 
+        h2 
+        {
+            color: #FB9590;
+        }
+
+        input, select, button 
+        {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #852E4E;
+            color: #FFBB94;
+            border: 2px solid #DC586D;
+        }
+
+        input[type="number"], select 
+        {
+            width: 250px;
+        }
+
+        button 
+        {
+            cursor: pointer;
+        }
+
+        button:hover 
+        {
+            background-color: #FB9590;
+            color: #4C1D3D;
+        }
+
+        .result 
+        {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #FB9590;
+        }
+
+        footer 
+        {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #FB9590;
+        }
+
+        .home 
+        {
+            padding: 10px 20px;
+            background-color: #A33757;
+            border: 2px solid #FB9590;
+            border-radius: 5px;
+            color: #FFBB94;
+            text-decoration: none;
+        }
+
+        .home:hover 
+        {
+            background-color: #FB9590;
+            color: #4C1D3D;
+        }
+    </style>
+</head>
+<body>
+    <h2>Unit Converter</h2>
+
+    <input type="number" id="inputValue" placeholder="Enter Value" /><br>
+    <select id="conversionType">
+        <option value="cToF">Celsius to Fahrenheit</option>
+        <option value="fToC">Fahrenheit to Celsius</option>
+        <option value="mToFt">Meters to Feet</option>
+        <option value="ftToM">Feet to Meters</option>
+    </select><br>
+    <button onclick="convert()">Convert</button><br>
+
+    <div class="result" id="result"></div>
+
+    <footer>
+        <a href="index.html" class="home">Return to Home</a>
+    </footer>
+
+    <script>
+        function convert() 
+        {
+            const inputValue = parseFloat(document.getElementById("inputValue").value);
+            const conversionType = document.getElementById("conversionType").value;
+            let result;
+
+            if (isNaN(inputValue)) 
+            {
+                document.getElementById("result").innerText = "Please enter a valid number.";
+                return;
+            }
+
+            switch (conversionType) 
+            {
+                case "cToF":
+                    result = (inputValue * 9 / 5) + 32;
+                    document.getElementById("result").innerText = `${inputValue}°C = ${result.toFixed(2)}°F`;
+                    break;
+                case "fToC":
+                    result = (inputValue - 32) * 5 / 9;
+                    document.getElementById("result").innerText = `${inputValue}°F = ${result.toFixed(2)}°C`;
+                    break;
+                case "mToFt":
+                    result = inputValue * 3.28084;
+                    document.getElementById("result").innerText = `${inputValue} meters = ${result.toFixed(2)} feet`;
+                    break;
+                case "ftToM":
+                    result = inputValue / 3.28084;
+                    document.getElementById("result").innerText = `${inputValue} feet = ${result.toFixed(2)} meters`;
+                    break;
+                default:
+                    document.getElementById("result").innerText = "Invalid conversion type.";
+            }
+        }
+    </script>
+</body>
+</html>
