@@ -1,13 +1,3 @@
-<nav>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="conversion.html">Conversion</a></li>
-        <li><a href="tax_calculator.html">Income Tax Calculator</a></li>
-        <li><a href="loops.html">Looping</a></li>
-        <li><a href="payroll.html">Payroll</a></li>
-    </ul>
-</nav>
-
 document.getElementById('convert-btn').addEventListener('click', function () {
     const value = parseFloat(document.getElementById('value').value);
     const type = document.getElementById('conversion-type').value;
