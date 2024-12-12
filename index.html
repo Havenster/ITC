@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Project Grade Rubrix</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>Web Project Grade Rubrix</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#conversion">Conversion</a></li>
+                <li><a href="#tax-calculator">Income Tax Calculator</a></li>
+                <li><a href="#loops">Looping</a></li>
+                <li><a href="#payroll">Payroll</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="conversion">
+            <h2>Conversion</h2>
+            <form id="conversion-form">
+                <label for="value">Enter Value:</label>
+                <input type="number" id="value" name="value">
+
+                <select id="conversion-type">
+                    <option value="c-to-f">Celsius to Fahrenheit</option>
+                    <option value="f-to-c">Fahrenheit to Celsius</option>
+                    <option value="m-to-ft">Meters to Feet</option>
+                    <option value="ft-to-m">Feet to Meters</option>
+                </select>
+
+                <button type="button" id="convert-btn">Convert</button>
+            </form>
+            <p id="conversion-result"></p>
+        </section>
+
+        <section id="tax-calculator">
+            <h2>Income Tax Calculator</h2>
+            <form id="tax-form">
+                <label for="income">Enter Annual Income:</label>
+                <input type="number" id="income" name="income">
+                <button type="button" id="calculate-tax">Calculate Tax</button>
+            </form>
+            <p id="tax-result"></p>
+        </section>
+
+        <section id="loops">
+            <h2>Looping</h2>
+            <form id="loops-form">
+                <label for="number">Enter N:</label>
+                <input type="number" id="number" name="number">
+                <button type="button" id="factorial-btn">Factorial</button>
+                <button type="button" id="sum-btn">Sum</button>
+                <button type="button" id="average-btn">Average</button>
+            </form>
+            <p id="loops-result"></p>
+        </section>
+
+        <section id="payroll">
+            <h2>Simple Payroll</h2>
+            <form id="payroll-form">
+                <label for="hours">Enter Hours Worked:</label>
+                <input type="number" id="hours" name="hours">
+
+                <label for="rate">Enter Hourly Rate:</label>
+                <input type="number" id="rate" name="rate">
+
+                <button type="button" id="calculate-payroll">Calculate Payroll</button>
+            </form>
+            <p id="payroll-result"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Web Project Grade Rubrix</p>
+    </footer>
+
+    <script src="js/conversion.js"></script>
+    <script src="js/tax_calculator.js"></script>
+    <script src="js/loops.js"></script>
+    <script src="js/payroll.js"></script>
+</body>
+
+</html>
