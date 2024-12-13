@@ -1,7 +1,12 @@
 document.getElementById('calculate-tax').addEventListener('click', function () {
     const income = parseFloat(document.getElementById('income').value);
-    let tax;
 
+    if (isNaN(income) || income < 0) {
+        document.getElementById('tax-result').textContent = "Please enter a valid non-negative income.";
+        return;
+    }
+
+    let tax;
     if (income <= 50000) {
         tax = income * 0.1;
     } else if (income <= 100000) {
@@ -10,5 +15,5 @@ document.getElementById('calculate-tax').addEventListener('click', function () {
         tax = income * 0.3;
     }
 
-    document.getElementById('tax-result').textContent = Your tax is $${tax.toFixed(2)};
+    document.getElementById('tax-result').textContent = `Your tax is $${tax.toFixed(2)}.`;
 });
